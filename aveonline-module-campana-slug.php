@@ -19,6 +19,7 @@ define("AVMCUS_LOG_COUNT",1000);
 define("AVMCUS_BASENAME",plugin_basename(__FILE__));
 define("AVMCUS_DIR",plugin_dir_path( __FILE__ ));
 define("AVMCUS_URL",plugin_dir_url(__FILE__));
+define("AVMCUS_URL_REGISTER",'https://guias.aveonline.co/registrarse');
 
 require_once AVMCUS_DIR . 'update.php';
 github_updater_plugin_wordpress([
@@ -71,12 +72,17 @@ github_updater_plugin_wordpress([
     ]
 ]);
 
-// Verificar Elementor
-add_action('plugins_loaded', function () {
-    if (!did_action('elementor/loaded')) {
-        return;
-    }
+add_action('elementor/widgets/register', function ($widgets_manager) {
+    require_once __DIR__ . '/widgets/ave-slug-widget.php';
+    $widgets_manager->register(new \Ave_Slug_Widget());
+});
 
-    require_once __DIR__ . '/includes/controls.php';
-    require_once __DIR__ . '/includes/frontend.php';
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script(
+        'ave-slug-js',
+        plugin_dir_url(__FILE__) . 'js/ave-slug-url.js',
+        [],
+        '1.0',
+        true
+    );
 });
