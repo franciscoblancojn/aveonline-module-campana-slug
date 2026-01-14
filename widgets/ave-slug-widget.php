@@ -31,6 +31,14 @@ class Ave_Slug_Widget extends Widget_Base {
         );
 
         $this->add_control(
+            'url_replace',
+            [
+                'label' => 'URL a remplasar',
+                'type' => Controls_Manager::TEXT,
+                'default' => AVMCUS_URL_REGISTER,
+            ]
+        );
+        $this->add_control(
             'url_base',
             [
                 'label' => 'URL Base',
@@ -59,7 +67,7 @@ class Ave_Slug_Widget extends Widget_Base {
         $final_url = esc_url($settings['url_base'] . $settings['slug']);
         ?>
         <div class="ave-slug-widget"
-             data-ave-url-replace="<?php echo AVMCUS_URL_REGISTER; ?>"
+             data-ave-url-replace="<?php echo $settings['url_replace']; ?>"
              data-ave-url="<?php echo $final_url; ?>">
         </div>
         <?php
