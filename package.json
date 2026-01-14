@@ -1,0 +1,27 @@
+{
+  "name": "aveonline-module-campana-slug",
+  "version": "1.0.0",
+  "description": "Agrega un modulo para agregar la url de campaña por pagina.",
+  "main": "index.js",
+  "scripts": {
+    "v": "grep -i \"Version:\" aveonline-module-campana-slug.php | sed 's/.*Version:[[:space:]]*//'",
+    "sync:package": "VERSION=$(npm run -s v) && npm version $VERSION --no-git-tag-version",
+    "sync:readme": "VERSION=$(npm run -s v) && sed -i \"s/^Stable tag:.*/Stable tag: $VERSION/\" README.md",
+    "sync:version": "npm run sync:package && npm run sync:readme",
+    "push-tag": "npm run sync:version && VERSION=$(npm run -s v) && git add . && git commit -m \"Release v$VERSION\" && git tag v$VERSION && git push origin master && git push origin v$VERSION"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscoblancojn/aveonline-module-campana-slug.git"
+  },
+  "keywords": [
+    "aveonline",
+    "elementor"
+  ],
+  "author": "franciscoblancojn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franciscoblancojn/aveonline-module-campana-slug/issues"
+  },
+  "homepage": "https://github.com/franciscoblancojn/aveonline-module-campana-slug#readme"
+}
