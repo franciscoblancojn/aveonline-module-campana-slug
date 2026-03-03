@@ -56,6 +56,15 @@ class Ave_Slug_Widget extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'save_props_url',
+            [
+                'label' => 'Conservar Parámetros de URL',
+                'type' => Controls_Manager::SWITCHER,
+                'default' => 'yes'
+            ]
+        );
+
         $this->end_controls_section();
     }
 
@@ -68,7 +77,9 @@ class Ave_Slug_Widget extends Widget_Base {
         ?>
         <div class="ave-slug-widget"
              data-ave-url-replace="<?php echo $settings['url_replace']; ?>"
-             data-ave-url="<?php echo $final_url; ?>">
+             data-ave-url="<?php echo $final_url; ?>"
+             data-ave-save-props-url="<?php echo $settings['save_props_url']; ?>"
+        >
         </div>
         <?php
     }
