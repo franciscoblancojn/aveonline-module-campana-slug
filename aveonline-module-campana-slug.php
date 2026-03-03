@@ -72,6 +72,11 @@ github_updater_plugin_wordpress([
     ]
 ]);
 
+function AVMCUS_get_version() {
+    $plugin_data = get_plugin_data( __FILE__ );
+    $plugin_version = $plugin_data['Version'];
+    return $plugin_version;
+}
 add_action('elementor/widgets/register', function ($widgets_manager) {
     require_once __DIR__ . '/widgets/ave-slug-widget.php';
     $widgets_manager->register(new \Ave_Slug_Widget());
@@ -82,7 +87,7 @@ add_action('wp_enqueue_scripts', function () {
         'ave-slug-js',
         plugin_dir_url(__FILE__) . 'js/ave-slug-url.js',
         [],
-        '1.0',
+        AVMCUS_get_version(),
         true
     );
 });
