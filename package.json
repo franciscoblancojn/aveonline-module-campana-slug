@@ -1,6 +1,6 @@
 {
   "name": "aveonline-module-campana-slug",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Agrega un modulo para agregar la url de campaña por pagina.",
   "main": "index.js",
   "scripts": {
