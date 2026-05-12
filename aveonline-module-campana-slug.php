@@ -11,7 +11,7 @@
 
 if (!defined('ABSPATH')) exit;
 
-
+// aveonline-module-campana-slug-master/aveonline-module-campana-slug.php
 //AVMCUS_
 define("AVMCUS_KEY",'AVMCUS');
 define("AVMCUS_LOG",true);
@@ -22,7 +22,7 @@ define("AVMCUS_URL",plugin_dir_url(__FILE__));
 define("AVMCUS_URL_REGISTER",'https://guias.aveonline.co/registrarse');
 
 require_once AVMCUS_DIR . 'update.php';
-github_updater_plugin_wordpress_function_v1([
+github_updater_plugin_wordpress_function_v2([
     'basename'=>AVMCUS_BASENAME,
     'dir'=>AVMCUS_DIR,
     'file'=>"aveonline-module-campana-slug.php",
