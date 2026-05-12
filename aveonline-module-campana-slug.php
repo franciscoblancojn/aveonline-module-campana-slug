@@ -22,7 +22,7 @@ define("AVMCUS_URL",plugin_dir_url(__FILE__));
 define("AVMCUS_URL_REGISTER",'https://guias.aveonline.co/registrarse');
 
 require_once AVMCUS_DIR . 'update.php';
-github_updater_plugin_wordpress_function([
+github_updater_plugin_wordpress_function_v1([
     'basename'=>AVMCUS_BASENAME,
     'dir'=>AVMCUS_DIR,
     'file'=>"aveonline-module-campana-slug.php",
