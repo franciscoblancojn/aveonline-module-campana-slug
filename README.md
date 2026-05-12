@@ -1,48 +1,78 @@
-# Aveonine Modulo de Campaña Slug
+# Aveonline Módulo de Campaña Slug
 
-Contributors: Francisco Blanco
+**Contributors:** Francisco Blanco
+**Tags:** aveonline, elementor, url slug, campaña, link tracking
+**Requires at least:** 5.0
+**Tested up to:** 5.9
+**Stable tag:** 1.2.0
+**License:** GPLv2 or later
+**License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 
-Tags: aveonline, elementor, url slug
+Plugin de WordPress que agrega un widget de Elementor para configurar URLs de campaña con slug por página. Diseñado para integrarse con la plataforma de envíos **Aveonline** en Colombia.
 
-Requires at least: 5.0
+## Descripción
 
-Tested up to: 5.9
+Este plugin permite añadir un widget de Elementor ("Ave Campaign Slug") que reescribe en el frontend los enlaces que apuntan a una URL específica (por defecto `https://guias.aveonline.co/registrarse`), reemplazándolos por una URL con un slug de campaña personalizado (ej. `https://guias.aveonline.co/registrarse?campana=mi-slug`).
 
-Stable tag: 1.2.0
+### Funcionalidades
 
-License: GPLv2 or later
+- **Widget de Elementor** que se inserta en cualquier página.
+- **Configuración por página** de la URL a reemplazar, URL base con campaña y slug.
+- **Conservación de parámetros URL**: opción para mantener los parámetros de la URL actual (excepto `campana`) en los enlaces reescritos.
+- **Actualizador automático** vía GitHub Releases.
 
-License URI: [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
+## Requisitos
 
-It is an plugin of wordpress, for Shipping in Colombia
+- WordPress 5.0+
+- **Elementor** (plugin necesario para el funcionamiento del widget)
+- PHP 8.0+ (usa `str_ends_with()`)
+- Elementor debe estar activo en el sitio
 
-## Description
+## Instalación
 
-Agrega un modulo para agregar la url de campaña por pagina.
+1. Descarga el archivo `.zip` del plugin desde [GitHub](https://github.com/franciscoblancojn/aveonline-module-campana-slug).
+2. Ve al administrador de WordPress en **Plugins → Añadir nuevo**.
+3. Haz clic en **Subir plugin**.
+4. Selecciona el archivo `.zip` descargado y haz clic en **Instalar ahora**.
+5. Activa el plugin.
 
-### Installation
+## Uso
 
-1. Download .zip [__CLICK HERE__](https://github.com/franciscoblancojn/aveonline-module-campana-slug/archive/refs/heads/master.zip) in repository [https://github.com/franciscoblancojn/aveonline-module-campana-slug](https://github.com/franciscoblancojn/aveonline-module-campana-slug)
-2. Go to admin of site wordpress, in __Plugins -> Add New__
-3. Click in button __Upload Plugin__
-4. Click in buttom __Select File__, and Upload file
-5. Active Plugin
+1. Edita una página con **Elementor**.
+2. Busca el widget **"Ave Campaign Slug"** en la categoría **General**.
+3. Arrástralo a la página (no necesita contenido visible, funciona con atributos `data-*`).
+4. Configura las opciones:
+   - **URL a remplazar**: URL que será reemplazada en los enlaces (por defecto `https://guias.aveonline.co/registrarse`).
+   - **URL Base**: URL base con el parámetro de campaña (por defecto `https://guias.aveonline.co/registrarse?campana=`).
+   - **Slug**: identificador único de la campaña (ej. `black-friday-2026`).
+   - **Conservar Parámetros de URL**: activa/desactiva la preservación de parámetros URL existentes.
 
-## Developer
+Al guardar la página, el JavaScript del plugin reescribirá automáticamente todos los enlaces `<a>` que contengan la URL configurada para que apunten a la URL con el slug de campaña.
 
-* Name: Francisco Blanco
-* Website: https://franciscoblanco.vercel.app/
-* Email: blancofrancisco34@gmail.com
+## Archivos del Plugin
 
-## Repositories
+```
+aveonline-module-campana-slug/
+├── aveonline-module-campana-slug.php   # Archivo principal del plugin
+├── update.php                          # Actualizador automático vía GitHub
+├── package.json                        # Herramientas de desarrollo
+├── README.md                           # Este archivo
+├── js/
+│   └── ave-slug-url.js                 # JavaScript frontend para reescritura de enlaces
+└── widgets/
+    └── ave-slug-widget.php             # Widget de Elementor
+```
 
-* GitHub: https://github.com/franciscoblancojn/aveonline-module-campana-slug
+## Desarrollador
 
-## License
-This plugin is distributed under the terms of the GNU General Public License v2.0 or later.
+- **Nombre:** Francisco Blanco
+- **Web:** https://franciscoblanco.vercel.app/
+- **Email:** blancofrancisco34@gmail.com
 
+## Repositorio
 
+- **GitHub:** https://github.com/franciscoblancojn/aveonline-module-campana-slug
 
+## Licencia
 
-
-
+Este plugin se distribuye bajo los términos de la **GNU General Public License v2.0 o posterior**.
