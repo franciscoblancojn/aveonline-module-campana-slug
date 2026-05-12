@@ -53,7 +53,7 @@ Al guardar la página, el JavaScript del plugin reescribirá automáticamente to
 
 ```
 aveonline-module-campana-slug/
-├── aveonline-module-campana-slug.php   # Archivo principal del plugin
+├── index.php   # Archivo principal del plugin
 ├── update.php                          # Actualizador automático vía GitHub
 ├── package.json                        # Herramientas de desarrollo
 ├── README.md                           # Este archivo

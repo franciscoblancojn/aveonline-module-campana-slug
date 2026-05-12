@@ -4,7 +4,7 @@
   "description": "Agrega un modulo para agregar la url de campaña por pagina.",
   "main": "index.js",
   "scripts": {
-    "v": "grep -i \"Version:\" aveonline-module-campana-slug.php | sed 's/.*Version:[[:space:]]*//'",
+    "v": "grep -i \"Version:\" index.php | sed 's/.*Version:[[:space:]]*//'",
     "sync:package": "VERSION=$(npm run -s v) && npm version $VERSION --no-git-tag-version",
     "sync:readme": "VERSION=$(npm run -s v) && sed -i \"s/^Stable tag:.*/Stable tag: $VERSION/\" README.md",
     "sync:version": "npm run sync:package && npm run sync:readme",
