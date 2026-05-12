@@ -22,54 +22,12 @@ define("AVMCUS_URL",plugin_dir_url(__FILE__));
 define("AVMCUS_URL_REGISTER",'https://guias.aveonline.co/registrarse');
 
 require_once AVMCUS_DIR . 'update.php';
-github_updater_plugin_wordpress([
+github_updater_plugin_wordpress_function([
     'basename'=>AVMCUS_BASENAME,
     'dir'=>AVMCUS_DIR,
     'file'=>"aveonline-module-campana-slug.php",
     'path_repository'=>'franciscoblancojn/aveonline-module-campana-slug',
     'branch'=>'master',
-    'token_array_split'=>[
-        "g",
-        "h",
-        "p",
-        "_",
-        "G",
-        "4",
-        "W",
-        "E",
-        "W",
-        "F",
-        "p",
-        "V",
-        "U",
-        "E",
-        "F",
-        "V",
-        "x",
-        "F",
-        "U",
-        "n",
-        "b",
-        "M",
-        "k",
-        "P",
-        "R",
-        "x",
-        "o",
-        "f",
-        "t",
-        "Y",
-        "8",
-        "z",
-        "j",
-        "t",
-        "4",
-        "E",
-        "x",
-        "b",
-        "i",
-        "9"
-    ]
 ]);
 
 function AVMCUS_get_version() {
