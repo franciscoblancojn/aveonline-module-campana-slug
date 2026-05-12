@@ -4,7 +4,7 @@
  * Plugin Name: Aveonine Modulo de Campaña Slug
  * Plugin URI: https://github.com/franciscoblancojn/aveonline-module-campana-slug
  * Description: Agrega un modulo para agregar la url de campaña por pagina.
- * Version: 1.3.2
+ * Version: 1.3.3
  * Author: franciscoblancojn
  * Author URI: https://franciscoblanco.vercel.app/
  * Text Domain: aveonine-modulo-campana-slug
